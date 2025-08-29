@@ -2,6 +2,8 @@ import React, { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, Github, Linkedin, Mail, Phone, ExternalLink, Download, Send, FileDown, Code2, GraduationCap, Briefcase } from "lucide-react";
 
+
+
 // ==== CONFIGURABLE DATA (edit these) ====
 const PROFILE = {
   name: "Sumit Bothgi",
@@ -40,7 +42,7 @@ const ABOUT = {
       title: "Internship (Jr. Software Developer)",
       org: "Winners IT Solutions",
       period: "08-2023, 03-2024",
-      details: "Hands‑on experince with Java projects and web apps; team collaboration.",
+      details: "Hands‑on experince with Java and PHP projects and web apps; team collaboration.",
     },
   ],
 };
@@ -57,6 +59,7 @@ const SKILLS = [
   { name: "Java", level: 90, area: "Backend" },
   { name: "Spring Boot", level: 80, area: "Backend" },
   { name: "Hibernate", level: 85, area: "Backend" },
+  { name: "Python", level: 85, area: "Backend" },
   { name: "PHP", level: 80, area: "Backend" },
   { name: "Laravel", level: 75, area: "Backend" },
 
@@ -72,6 +75,18 @@ const SKILLS = [
   { name: "Eclipse", level: 75, area: "Tools" },
   { name: "VS Code", level: 85, area: "Tools" },
 ];
+
+const CERTIFICATES = [
+  
+ 
+];
+
+
+<section id="certificates" className="p-9">
+  <h2 className="text-2xl font-bold mb-4">Certificates</h2>
+  ...
+</section>
+
 
 const PROJECTS = [
   {
@@ -166,40 +181,62 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-zinc-50 to-zinc-100 text-zinc-800 dark:from-zinc-900 dark:to-black dark:text-zinc-100">
-      {/* ===== NAVBAR ===== */}
-      <header className="sticky top-0 z-50 bg-white/70 dark:bg-zinc-900/70 backdrop-blur border-b">
-        <Container>
-          <div className="flex items-center justify-between py-4">
-            <a href="#home" className="flex items-center gap-2 font-bold text-lg md:text-xl">
-              <div className="grid h-9 w-9 place-items-center rounded-2xl border shadow">
-                SB
-              </div>
-              <span> {PROFILE.name} </span>
+
+{/* ===== NAVBAR ===== */}
+<header className="sticky top-0 z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl border-b border-gray-200 dark:border-zinc-800 shadow-md">
+  <Container>
+    <div className="flex items-center justify-between py-3">
+      
+      {/* Logo */}
+      <a href="#home" className="flex items-center gap-2 font-extrabold text-lg md:text-xl tracking-wide text-indigo-600 dark:text-indigo-400 hover:scale-105 transition">
+        <div className="grid h-10 w-10 place-items-center rounded-2xl border bg-indigo-600 text-white font-bold shadow-lg shadow-indigo-500/30">
+          SB
+        </div>
+        <span className="text-gray-900 dark:text-white"> {PROFILE.name} </span>
+      </a>
+
+      {/* Desktop Nav */}
+      <nav className="hidden md:flex items-center gap-2">
+        {nav.map((n) => (
+          <a
+            key={n.id}
+            href={`#${n.id}`}
+            className="rounded-lg px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-indigo-100 dark:hover:bg-indigo-800 hover:text-indigo-700 dark:hover:text-white transition-all duration-200"
+          >
+            {n.label}
+          </a>
+        ))}
+      </nav>
+
+      {/* Mobile Menu Button */}
+      <button
+        className="md:hidden grid place-items-center rounded-lg border p-2 hover:bg-gray-100 dark:hover:bg-zinc-800 transition"
+        onClick={() => setOpen(!open)}
+        aria-label="Toggle Menu"
+      >
+        {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+      </button>
+    </div>
+
+    {/* Mobile Dropdown */}
+    {open && (
+      <div className="md:hidden pb-4 animate-slide-down">
+        <div className="grid gap-2">
+          {nav.map((n) => (
+            <a
+              key={n.id}
+              href={`#${n.id}`}
+              className="rounded-lg px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-indigo-100 dark:hover:bg-indigo-800 hover:text-indigo-700 dark:hover:text-white transition"
+              onClick={() => setOpen(false)}
+            >
+              {n.label}
             </a>
-            <nav className="hidden md:flex items-center gap-1">
-              {nav.map((n) => (
-                <a key={n.id} href={`#${n.id}`} className="rounded-xl px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800">
-                  {n.label}
-                </a>
-              ))}
-            </nav>
-            <button className="md:hidden grid place-items-center rounded-xl border p-2" onClick={() => setOpen(!open)} aria-label="Toggle Menu">
-              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </button>
-          </div>
-          {open && (
-            <div className="md:hidden pb-4">
-              <div className="grid gap-2">
-                {nav.map((n) => (
-                  <a key={n.id} href={`#${n.id}`} className="rounded-xl px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800" onClick={() => setOpen(false)}>
-                    {n.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          )}
-        </Container>
-      </header>
+          ))}
+        </div>
+      </div>
+    )}
+  </Container>
+</header>
 
       {/* ===== HERO ===== */}
       <Section id="home" className="pt-8">
@@ -325,6 +362,145 @@ export default function Portfolio() {
           </div>
         </Container>
       </Section>
+
+      
+{/* Certificates Section */}
+<section id="certificates" className="py-12 px-6 md:px-16 bg-black text-white">
+  <h2 className="text-3xl font-bold mb-8 flex items-center gap-2">
+    <GraduationCap className="w-8 h-8 text-purple-400" />
+    Certificates
+  </h2>
+
+  <div className="grid md:grid-cols-3 gap-6">
+    {CERTIFICATES.map((cert, index) => (
+      <div
+        key={index}
+        className="bg-gray-900 border border-gray-700 rounded-2xl shadow-md hover:shadow-lg transition-transform hover:scale-105 p-6"
+      >
+        <h3 className="text-xl font-semibold mb-2">{cert.title}</h3>
+        <p className="text-gray-400">{cert.issuer}</p>
+        <p className="text-sm text-gray-500">{cert.year}</p>
+       
+      </div>
+    ))}
+  </div>
+
+ <section id="certificates" className="py-16 px-6 bg-gray-900 text-white">
+  <h2 className="text-3xl font-bold mb-10 text-center"></h2>
+
+  <div className="grid md:grid-cols-3 gap-6">
+    
+    {/* Certificate 1 */}
+    <div className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
+      <h3 className="text-xl font-semibold mb-2">Avishkar Research Project Competition</h3>
+      <p className="text-sm text-gray-400 mb-4">Savitribai Phule Pune University</p>
+      <a
+        href="/Certificates/certificate1.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+      >
+        View Certificate
+      </a>
+    </div>
+
+    {/* Certificate 2 */}
+    <div className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
+      <h3 className="text-xl font-semibold mb-2">OOPs in Java</h3>
+      <p className="text-sm text-gray-400 mb-4">Great Learning</p>
+      <a
+        href="/Certificates/certificate2.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+      >
+        View Certificate
+      </a>
+    </div>
+
+    {/* Certificate 3 */}
+    <div className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
+      <h3 className="text-xl font-semibold mb-2">Digital Productivity</h3>
+      <p className="text-sm text-gray-400 mb-4">NIIT Foundation</p>
+      <a
+        href="/Certificates/certificate3.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+      >
+        View Certificate
+      </a>
+    </div>
+
+
+    {/* Certificate 4 */}
+    <div className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
+      <h3 className="text-xl font-semibold mb-2">Python 101 for Data Science</h3>
+      <p className="text-sm text-gray-400 mb-4">IBM Developer Skills Network. </p>
+      <a
+        href="/Certificates/certificate4.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+      >
+        View Certificate
+      </a>
+    </div>
+
+    {/* Certificate 5 */}
+    <div className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
+      <h3 className="text-xl font-semibold mb-2">Internship Completion </h3>
+      <p className="text-sm text-gray-400 mb-4">Winners IT solutions </p>
+      <a
+        href="/Certificates/certificate5.jpg"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+      >
+        View Certificate
+      </a>
+    </div>
+
+    {/* Certificate 6 */}
+    <div className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
+      <h3 className="text-xl font-semibold mb-2">Full Stack Java Developer </h3>
+      <p className="text-sm text-gray-400 mb-4">Qspiders | JSpiders | PySpider </p>
+      <a
+        // href="/Certificates/certificate.jpg"
+        
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+      >
+        Certificate Pending 
+      </a>
+    </div>     
+
+  </div>
+</section>
+
+
+
+
+  
+
+
+
+{/* <div className="mt-6 text-center">
+  <a
+    href="public\Certificates"  // put your PDF file in the public folder
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-6 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition"
+  >
+    View All Certificates (PDF)
+  </a>
+</div> */}
+
+
+</section>
+
+
 
       {/* ===== PROJECTS ===== */}
       <Section id="projects">

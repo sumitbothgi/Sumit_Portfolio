@@ -77,6 +77,7 @@ export default function App() {
       {/* Your Portfolio Component */}
       <main className="p-6">
         <Portfolio />
+        {/* <Certificates /> */}
       </main>
     </div>
   );
