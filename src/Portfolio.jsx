@@ -365,7 +365,7 @@ export default function Portfolio() {
 
       
 {/* Certificates Section */}
-<section id="certificates" className="py-12 px-6 md:px-16 bg-black text-white">
+<section id="certificates" className="py-12 px-6 md:px-16 dark:bg-zinc-900/40 text-white">
   <h2 className="text-3xl font-bold mb-8 flex items-center gap-2">
     <GraduationCap className="w-8 h-8 text-purple-400" />
     Certificates
@@ -385,7 +385,7 @@ export default function Portfolio() {
     ))}
   </div>
 
- <section id="certificates" className="py-16 px-6 bg-gray-900 text-white">
+ <section id="certificates" className="py-16 px-6 dark:bg-zinc-900/40 text-white">
   <h2 className="text-3xl font-bold mb-10 text-center"></h2>
 
   <div className="grid md:grid-cols-3 gap-6">
