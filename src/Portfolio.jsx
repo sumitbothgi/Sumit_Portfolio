@@ -77,8 +77,6 @@ const SKILLS = [
 ];
 
 const CERTIFICATES = [
-  
- 
 ];
 
 
@@ -249,7 +247,7 @@ export default function Portfolio() {
               <p className="mt-4 text-lg md:text-xl font-medium">{PROFILE.title}</p>
               <p className="text-zinc-600 dark:text-zinc-400">{PROFILE.subtitle}</p>
               <div className="mt-6 flex flex-wrap items-center gap-3">
-                <PrimaryButton href="#contact" icon={<Send className="h-4 w-4" />}>Hire Me</PrimaryButton>
+                <PrimaryButton href="#contact" icon={<Send className="h-4 w-4" />}>Connect Me</PrimaryButton>
                 <PrimaryButton href={PROFILE.resumeUrl} icon={<Download className="h-4 w-4" />}>Download Resume</PrimaryButton>
               </div>
               <div className="mt-6 flex items-center gap-4">
