@@ -416,7 +416,7 @@ export default function Portfolio() {
       </a>
     </div>
 
-    {/* Certificate 3 */}
+    {/* Certificate 3
     <div className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
       <h3 className="text-xl font-semibold mb-2">Digital Productivity</h3>
       <p className="text-sm text-gray-400 mb-4">NIIT Foundation</p>
@@ -428,7 +428,7 @@ export default function Portfolio() {
       >
         View Certificate
       </a>
-    </div>
+    </div> */}
 
 
     {/* Certificate 4 */}
@@ -460,6 +460,20 @@ export default function Portfolio() {
     </div>
 
     {/* Certificate 6 */}
+    <div className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
+      <h3 className="text-xl font-semibold mb-2">Internship Completion Latter </h3>
+      <p className="text-sm text-gray-400 mb-4">Winners IT solutions </p>
+      <a
+        href="/Certificates/certificate6.png"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+      >
+        View Certificate
+      </a>
+    </div>
+
+    {/* Certificate 7 */}
     <div className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
       <h3 className="text-xl font-semibold mb-2">Full Stack Java Developer </h3>
       <p className="text-sm text-gray-400 mb-4">Qspiders | JSpiders | PySpider </p>
