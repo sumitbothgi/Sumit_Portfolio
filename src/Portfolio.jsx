@@ -272,9 +272,9 @@ export default function Portfolio() {
                   <div className="absolute inset-0 bg-gradient-to-br from-indigo-200 via-fuchsia-200 to-amber-200 dark:from-indigo-500/40 dark:via-fuchsia-500/30 dark:to-amber-400/20" />
                   <div className="absolute inset-0 grid place-items-center">
 
-                    <div className="w-70 h-70 rounded-full overflow-hidden shadow-lg">
+                    <div className="w-60 h-70 rounded-full overflow-hidden shadow-lg">
                      <img 
-                      src="/profile.jpg" 
+                      src="public\SumitProfile.jpg" 
                       alt="Sumit Bothgi" 
                       className="w-full h-full object-cover"
                     />
