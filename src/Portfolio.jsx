@@ -274,7 +274,7 @@ export default function Portfolio() {
 
                     <div className="w-60 h-70 rounded-full overflow-hidden shadow-lg">
                      <img 
-                      src="public\SumitProfile.jpg" 
+                      src="SumitProfile.jpg" 
                       alt="Sumit Bothgi" 
                       className="w-full h-full object-cover"
                     />
